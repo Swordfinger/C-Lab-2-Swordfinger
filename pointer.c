@@ -1,7 +1,7 @@
 /*
   Lab 2(Data Lab  - Pointers)
  *
- * <PLEASE REPLACE THIS LINE WITH YOUR NAME AND STUDENT USERNAME>
+ * Kaiwen Tao 301551216
  *
  * pointer.c - Source file with your solutions to the Lab.
  *             This is the file you will hand in to your instructor.
@@ -111,8 +111,10 @@ int intSize() {
   int *intPtr1;
   int *intPtr2;
   // Write code to compute size of an integer.
-
-  return 2;
+  intPtr1 = intArray;
+  intPtr2 = intArray + 1;
+  int size = (char*)intPtr2 - (char*)intPtr1;   
+  return size;
 }
 
 /*
@@ -134,8 +136,10 @@ int doubleSize() {
   double *doubPtr1;
   double *doubPtr2;
   // Write code to compute size of a double.
-
-  return 2;
+  doubPtr1 = doubArray;
+  doubPtr2 = doubArray + 1;
+  int size = (char*)doubPtr2 - (char*)doubPtr1;
+  return size;
 }
 
 /*
@@ -157,8 +161,10 @@ int pointerSize() {
   double **ptrPtr1;
   double **ptrPtr2;
   // Write code to compute size of a pointer.
-
-  return 2;
+  ptrPtr1 = ptrArray;
+  ptrPtr2 = ptrPtr1 + 1;
+  int size = (char*)ptrPtr2 - (char*)ptrPtr1;
+  return size;
 }
 
 /*
@@ -177,7 +183,11 @@ int pointerSize() {
  *   Unary integer operators: ~, -
  */
 void swapInts(int *ptr1, int *ptr2) {
+  // I will use a int temp variable to store one of the int value, then swap the value
   // Your code here
+  int temp = *ptr2;
+  *ptr2 = *ptr1;
+  *ptr1 = temp;
 }
 
 /*
@@ -200,7 +210,8 @@ int changeValue() {
   int *intPtr1 = intArray;
   // Remember not to use constants greater than 255.
   // Remember to use * to dereference. You cannot use '[<index>]' syntax.
-
+  intPtr1 = intPtr1 + 5;
+  *intPtr1 = 295;
   return intArray[5];
 }
 
@@ -223,6 +234,9 @@ int changeValue() {
  */
 int withinSameBlock(int *ptr1, int *ptr2) {
   // Your code here
+  // 64 bytes
+
+
   return 2;
 }
 
